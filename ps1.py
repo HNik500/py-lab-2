@@ -14,8 +14,9 @@ class Result(Student):
     def __init__(self, name, roll_no, marks):
         super().__init__(name, roll_no)
         try:
-            if any(m < 0 or m > 100 for m in marks):
-                raise ValueError("Marks should be between 0 and 100")
+            for m in marks:
+                if m < 0 or m > 100:
+                    raise ValueError("Marks should be between 0 and 100")
             self.marks = marks
         except ValueError as e:
             print("Error:", e)
@@ -33,3 +34,4 @@ r1 = Result("Amit", 101, [90, 85, 88])
 r1.show_result()
 r2 = Result("Rita", 102, [50, -10, 80])  # will raise error
 r2.show_result()
+    
