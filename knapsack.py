@@ -43,3 +43,39 @@ print("Fractions of items taken:", fractions)
 
 
 print(f"Total profit: {profit}\nFractions: {frac}")
+
+
+
+
+
+
+
+
+nn
+
+
+
+# def greedy_knapsack(weights, profits, capacity):
+#     items = sorted(zip(weights, profits), key=lambda x: x[1]/x[0], reverse=True)
+#     total_profit, total_weight, fractions = 0, 0, [0]*len(weights)
+
+#     for i, (w, p) in enumerate(items):
+#         if capacity >= w:
+#             fractions[weights.index(w)] = 1
+#             capacity -= w
+#             total_profit += p
+#         else:
+#             fractions[weights.index(w)] = capacity / w
+#             total_profit += p * (capacity / w)
+#             break
+
+#     return total_profit, fractions
+
+# m = int(input("Enter number of items: "))
+# weights = [float(input(f"Weight {i+1}: ")) for i in range(m)]
+# profits = [float(input(f"Profit {i+1}: ")) for i in range(m)]
+# cap = float(input("Enter capacity: "))
+
+# profit, frac = greedy_knapsack(weights, profits, cap)
+# print(f"Total profit: {profit}\nFractions: {frac}")
+
