@@ -8,22 +8,21 @@
 #o Demonstrate try...except...finally to handle the borrowing process.
 
 
-# 4. Employee Payroll System
-
 class Employee:
     def __init__(self, name, emp_id, salary):
         try:
-            salary = float(salary)   # Convert to float (checks for numeric)
+            # Try converting to float — this ensures numeric type
+            salary = float(salary)
             if salary < 0:
                 raise ValueError("Salary cannot be negative")
             self.name = name
             self.emp_id = emp_id
             self.salary = salary
-        except ValueError as e:
-            print("Error:", e)        # prints the actual message like "Salary cannot be negative"
+        except ValueError:
+            print("Error: Salary must be a non-negative number")
             self.salary = 0
-        except TypeError as e:
-            print("Error:", e)        # handles type-related issues
+        except TypeError:
+            print("Error: Invalid salary input type")
             self.salary = 0
 
     def calculate_bonus(self):
